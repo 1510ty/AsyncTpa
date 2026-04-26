@@ -1,5 +1,5 @@
 name: "AsyncTpa"
-version: "0.0.0"
+version: "${version}"
 main: com.mc1510ty.AsyncTpa.paperfolia.v26_1_2.Main
 author: "1510ty"
 description: "Async Tpa Plugin, made by 1510ty"
