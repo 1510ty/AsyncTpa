@@ -1,0 +1,34 @@
+name: PaperFoliav26_1_2Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v6
+
+      - name: Java25をセットアップ
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: gradle
+
+      - name: GitのコミットIDを取得
+        id: git
+        run: echo "GIT_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: ビルド
+        run: ./gradlew :paper:v26_1_2:build -PgitCommit=${GIT_COMMIT}
+
+      - name: 配置
+        uses: actions/upload-artifact@v6
+        with:
+          name: RandomTP-PaperFolia26.1.2
+          path: paper/v26_1_2/build/libs/*.jar
