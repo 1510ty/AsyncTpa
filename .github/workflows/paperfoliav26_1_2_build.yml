@@ -37,5 +37,5 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           # ZIP名をJSTの時間とコミットIDに合わせる
-          name: AsyncTPA-${{ env.JST_TIME }}-${{ env.GIT_COMMIT }}--PaperFolia26.1.2
+          name: AsyncTPA-${{ env.JST_TIME }}-${{ env.GIT_COMMIT }}-PaperFolia26.1.2
           path: paperfolia/v26_1_2/build/libs/*.jar
