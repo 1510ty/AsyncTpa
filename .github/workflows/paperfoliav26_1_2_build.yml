@@ -25,10 +25,10 @@ jobs:
         run: echo "GIT_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
       - name: ビルド
-        run: ./gradlew :paper:v26_1_2:build -PgitCommit=${GIT_COMMIT}
+        run: ./gradlew :paperfolia:v26_1_2:build -PgitCommit=${GIT_COMMIT}
 
       - name: 配置
         uses: actions/upload-artifact@v6
         with:
           name: RandomTP-PaperFolia26.1.2
-          path: paper/v26_1_2/build/libs/*.jar
+          path: paperfolia/v26_1_2/build/libs/*.jar
