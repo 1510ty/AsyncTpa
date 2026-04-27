@@ -13,10 +13,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Logger;
 
 public class Main extends JavaPlugin {
 
-    private java.util.logging.Logger logger;
+    private final Logger logger = getLogger();
 
     private final Map<UUID, UUID> tpaRequests = new ConcurrentHashMap<>();
 
